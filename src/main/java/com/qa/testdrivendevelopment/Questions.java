@@ -113,9 +113,9 @@ public class Questions {
     	int b = Math.round(a/2);
     	//System.out.println(b);
 		String c = input.substring(0,b-1);
-		//System.out.println(c);
+		System.out.println(c);
 		String d = input.substring((b-1+n), (a));
-    	//System.out.println(d);
+    	System.out.println(d);
 		return c+d;
 	}
 
@@ -189,13 +189,25 @@ public class Questions {
 	 * HINT: String.toLowerCase
 	 */
 	public int amISearch(String sentence) {
-		String lower = sentence.toLowerCase();
+		String c = sentence.toLowerCase();
+		String b = " ";
+		c = b.concat(c);
+		c= c.concat(b);
 		String a = "am";
-		int b = 0;
-		int c = 0;
+		int i = 0;
+		int count = 0;
+
+        while (i < c.length()-2) {
+            if(c.charAt(i) == 'a' && c.charAt(i+1) == 'm' && c.charAt(i-1) == ' ' && c.charAt(i+2) == ' '){
+                i++;
+                count++;
+            }
+            else {
+                i++;
+            }
+        }
+        return count;
 		
-		
-    	return -1;
 	}
 
 	/**
